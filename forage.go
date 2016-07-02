@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+"fmt"
+gowit "github.com/snehacb/forage/gowit"
+)
 
 func main() {
-  fmt.Printf("Forager at your service!\n")
+  fmt.Println("Forager at your service!")
+  fmt.Println("GetRequest")
+  gowit.GetRequest()
 }
