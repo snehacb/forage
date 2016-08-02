@@ -1,4 +1,4 @@
-package forager
+package forage
 
 import (
 "fmt"
