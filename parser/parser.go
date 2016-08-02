@@ -1,4 +1,4 @@
-package forager
+package parser
 
 import (
   "fmt"
@@ -25,7 +25,7 @@ func init() {
 
 func ProcessJsonRequest( request string) bool{
   if request != "" {
-    fmt.Println(request)
+    fmt.Printf("To Marshal: %v", request)
   }
   return false
 }

@@ -15,25 +15,23 @@ func init() {
   token = os.Getenv("WITTOKEN")
 }
 
-func SendUserMessage(msg string) string {
+func PingBot(msg string) string {
   request := gorequest.New()
   /* initialize token and url */
   tokenstr := "Bearer "
   tokenstr += token
   urlstr := url
   urlstr += msg
-  fmt.Printf("Token = %v, Url = %v\n", tokenstr, urlstr)
+  fmt.Printf("Token = %v, Url Name = %v\n", tokenstr, urlstr)
   /* send message from user to wit.ai app */
   resp, body, errs := request.Get(urlstr).Set("Authorization", tokenstr).End()
 
   if resp != nil {
-    fmt.Printf("%v \n", body)
-    fmt.Printf("%T, %v \n", resp, resp)
+    fmt.Printf("Response %T, %v \n", resp, resp)
   } else if errs != nil {
-    fmt.Println(errs)
+    fmt.Printf("Errors %T, %v \n", errs, errs)
   }
-  fmt.Printf("%v\n", resp)
-  return "abc"
+  return body
 }
 
 func ProcessUserMessage(msg string) {
